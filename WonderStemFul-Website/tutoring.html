@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WonderStemFul | Tutoring</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-wrap">
+      <a class="brand" href="index.html">
+        <img class="logo-img" src="assets/logo.png" alt="WonderStemFul logo">
+        <span class="logo-text">WonderStemFul</span>
+      </a>
+  
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="tutoring.html">Tutoring</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  
+
+  <main class="section">
+    <div class="container">
+      <div class="hero-pro t-hero" style="border-radius:16px">
+        <h1>Join the WonderStemFul Family</h1>
+        <p class="slogan" style="text-transform:none;letter-spacing:.2px">Choose your path to get started.</p>
+      </div>
+
+      <div class="t-columns">
+        <div class="t-option">
+          <div style="font-size:2rem">🎓</div>
+          <div>
+            <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdUWpw2Y6Tm9k28DlB5XE5NNJ4gRJTBZr2QH5isFnsS5dhV_Q/viewform" target="_blank" rel="noopener">Click here to Tutor</a>
+            <p style="margin:6px 0 0">Share your STEM skills and mentor younger students.</p>
+          </div>
+        </div>
+        <div class="t-option">
+          <div style="font-size:2rem">📚</div>
+          <div>
+            <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdzfUnLwdGNwMwMUDQle2jUXabBHv7ZwiOeSJ9coeZ4Rs2nRw/viewform?usp=header" target="_blank" rel="noopener">Click here to be Tutored</a>
+            <p style="margin:6px 0 0">Get matched with a WonderStemFul tutor in days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container">© <span id="year"></span> WonderStemFul</div></footer>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const btn=document.querySelector('.menu-toggle'), nav=document.getElementById('nav');
+    btn?.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); });
+  </script>
+  <script> window.addEventListener('DOMContentLoaded', () => { const btn = document.querySelector('.menu-toggle'); const nav = document.getElementById('nav'); if (!btn || !nav) return; btn.addEventListener('click', () => { const open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); }); }); </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WonderStemFul | About</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-wrap">
+      <a class="brand" href="index.html">
+        <img class="logo-img" src="assets/logo.png" alt="WonderStemFul logo">
+        <span class="logo-text">WonderStemFul</span>
+      </a>
+  
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="tutoring.html">Tutoring</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  
+
+  <main class="container section">
+    <h2>About Us</h2>
+      <p style="max-width:860px">We are a student-led STEM nonprofit that aims to empower today’s youth. Established in 2025, our organization has spread across Georgia. Sparking wonder and knowledge through our interactive workshops and personalized tutoring programs.</p>
+    <h1>Leadership Team</h1>
+    <div class="team-grid" style="margin-top:16px">
+      <article class="card team-card">
+        <img src="assets/team/arshia_bajaj.jpg" alt="Arshia Bajaj">
+        <span class="role-badge">President and Founder</span>
+        <h3>ARSHIA BAJAJ</h3>
+        <p>Hi everybody! I am excited to serve as the founder and president of WonderStemFulL. I am currently a Junior at South Forsyth High, where I am actively involved in various STEM organizations and projects, including coding, TSA, FBLA, and the Math Team. Through this organization, I aspire to create accessible education for all, especially underprivileged youth! Apart from this, a fun fact about me is that I once received a letter back from Barack Obama! I am so ready for the journey ahead! 🚀</p>
+      </article>
+
+      <article class="card team-card">
+        <img src="assets/team/abigail_joshua-sunderraraj.jpg" alt="Abigail Joshua-Sunderraraj">
+        <span class="role-badge">Operation and Logistics Manager</span>
+        <h3>ABIGAIL JOSHUA‑SUNDERRAJ</h3>
+        <p>Hi, I'm Abigail! I'm 15 and will be a sophomore at South High. I enjoy singing, cooking as well as baking and love playing with my dog. I am really interested in Healthcare and have a really big passion in serving others. I am very excited and look forward to join the WonderStemFul team to collaborate on promoting STEM through grades K-8 with lots of fun and creative activities and workshops!</p>
+      </article>
+
+      <article class="card team-card">
+        <img src="assets/team/katie_ceruto.jpg" alt="Katie Ceruto">
+        <span class="role-badge">Fundraising Manager</span>
+        <h3>KATIE CERUTO</h3>
+        <p>Hi, I’m Katie Ceruto and I’m a sophomore at South Forsyth High School. I love reading, writing, math, history, and healthcare. I’ve always loved working with kids and helping people. I already work with my Scouting America troop and have felt so happy helping others achieve their goals. I can’t wait to see the good that WonderStemFul will bring!</p>
+      </article>
+
+      <article class="card team-card">
+        <img src="assets/team/akshata_joshi.jpg" alt="Akshata Joshi">
+        <span class="role-badge">Stem Educator</span>
+        <h3>AKSHATA JOSHI</h3>
+        <p>Hi! My name is Akshata and I'm a rising junior at South Forsyth High School. I love dance and drawing/painting. I'm interested in math and science subjects. I really enjoy STEM projects and want to help others learn new things!</p>
+      </article>
+
+      <article class="card team-card">
+        <img src="assets/team/anvitha_katta.jpg" alt="Anvitha Katta">
+        <span class="role-badge">Volunteer Coordinator</span>
+        <h3>ANVITHA KATTA</h3>
+        <p>Hey! My name is Anvitha Katta, and I’m so excited to work with you all this year! I’m passionate about making STEM more welcoming and accessible for everyone, and I can’t wait to help, support, and grow together this year!</p>
+      </article>
+
+      <article class="card team-card">
+        <img src="assets/team/akshay_devarakonda.jpg" alt="Akshay Devarakonda">
+        <span class="role-badge">Operation and Logistics Manager</span>
+        <h3>AKSHAY DEVARAKONDA</h3>
+        <p>I am Akshay Devarakonda, a rising sophomore at Denmark High School. I'm interested in business/eutrepreneurship and starting my own someday. I am in the FBLA and TSA Club at my school and have received the Presidential Award Gold in the organization of Manabadi. I want to be a part of the revolution to make AI safe, accurate, and accessible to all people, which I can achieve through educating people in the technology field of STEM. This is who I am.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container">© <span id="year"></span> WonderStemFul</div></footer>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const btn=document.querySelector('.menu-toggle'), nav=document.getElementById('nav');
+    btn?.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); });
+  </script>
+  <script> window.addEventListener('DOMContentLoaded', () => { const btn = document.querySelector('.menu-toggle'); const nav = document.getElementById('nav'); if (!btn || !nav) return; btn.addEventListener('click', () => { const open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); }); }); </script>
+</body>
+</html>

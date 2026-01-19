@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WonderStemFul | Contact</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-wrap">
+      <a class="brand" href="index.html">
+        <img class="logo-img" src="assets/logo.png" alt="WonderStemFul logo">
+        <span class="logo-text">WonderStemFul</span>
+      </a>
+  
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="tutoring.html">Tutoring</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  
+
+  <main>
+    <section class="hero-pro">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <div class="slogan">Infinite STEM, Boundless Wonder</div>
+      </div>
+    </section>
+
+    <section class="container section" style="padding-top:0">
+      <div class="card" style="max-width:720px;margin:0 auto">
+        <h2>Get In Touch</h2>
+        <p><strong>Email:</strong> <a href="mailto:contact.wonderstemful@gmail.com">contact.wonderstemful@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+12052238228">205‑223‑8228</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/wonder_stem_ful/" target="_blank" rel="noopener">@wonder_stem_ful</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container">© <span id="year"></span> WonderStemFul</div></footer>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const btn=document.querySelector('.menu-toggle'), nav=document.getElementById('nav');
+    btn?.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); });
+  </script>
+  <script> window.addEventListener('DOMContentLoaded', () => { const btn = document.querySelector('.menu-toggle'); const nav = document.getElementById('nav'); if (!btn || !nav) return; btn.addEventListener('click', () => { const open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); }); }); </script>
+</body>
+</html>
