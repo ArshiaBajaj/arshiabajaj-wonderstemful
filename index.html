@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WonderStemFul | Home</title>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-wrap">
+      <a class="brand" href="index.html">
+        <img class="logo-img" src="assets/logo.png" alt="WonderStemFul logo">
+        <span class="logo-text">WonderStemFul</span>
+      </a>
+  
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="tutoring.html">Tutoring</a>
+        <a href="opportunities.html">Opportunities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+  
+
+  <!-- Intro hero -->
+  <section class="hero-pro" style="position:relative; overflow:hidden">
+    <span class="stem-float" style="top:18px; left:8%; animation-delay:.2s">🧪</span>
+    <span class="stem-float" style="bottom:18px; right:10%; animation-delay:1.2s">⚛️</span>
+
+    <div class="container">
+      <h1>Exploring the Wonders of STEM</h1>
+      <div class="slogan">Infinite STEM, Boundless Wonder</div>
+      <div class="hero-actions">
+        <a class="btn primary" href="tutoring.html">Start Learning</a>
+        <a class="btn ghost" href="opportunities.html">Volunteer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why STEM + optional images -->
+  <section class="section">
+    <div class="container" style="position:relative">
+      <span class="stem-float" style="top:-10px; right:0; animation-delay:.8s">🧬</span>
+      <h2>Our Mission</h2>
+      <p style="max-width:860px">We aspire to create STEM education which easy-to-access and hands-on. We encourage children to become visionaries of the future by asking thought-provoking questions and mastering educational goals with confidence and joy!</p>
+
+      <div class="stem-strip">
+        <img src="assets/gallery/photo1.jpg" alt="Workshop activity" onerror="this.style.display='none'">
+        <img src="assets/gallery/photo2.jpg" alt="Coding help" onerror="this.style.display='none'">
+        <img src="assets/gallery/photo3.jpg" alt="Science demo" onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
+
+  <!-- Ways to Get Involved with flower on the right -->
+  <section class="container involvement-container">
+    <div>
+      <h2 style="color:var(--purple-800)">Ways to Get Involved</h2>
+      <div class="card-grid">
+        <a class="card" href="tutoring.html">
+          <span class="emoji-large">🎓</span>
+          <h3>Become a Tutor</h3>
+          <p>Mentor younger students and share your STEM passion.</p>
+          <span class="btn" style="margin-top:10px">Sign Up</span>
+        </a>
+        <a class="card" href="tutoring.html">
+          <span class="emoji-large">🔬</span>
+          <h3>Request Tutoring</h3>
+          <p>Get matched with a WonderStemFul tutor in days.</p>
+          <span class="btn" style="margin-top:10px">Get Help</span>
+        </a>
+        <a class="card" href="opportunities.html">
+          <span class="emoji-large">🌟</span>
+          <h3>Volunteer</h3>
+          <p>Support STEM Nights and community workshops.</p>
+          <span class="btn" style="margin-top:10px">View Events</span>
+        </a>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:center">
+      <svg class="flower" viewBox="0 0 200 300" aria-hidden="true">
+        <defs>
+          <linearGradient id="petalGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FF8DCA"/><stop offset="100%" stop-color="#6B4DE6"/>
+          </linearGradient>
+        </defs>
+        <path class="stem" d="M100,300 C92,240 108,190 100,140 C92,110 100,80 100,60" />
+        <g transform="translate(100,60)">
+          <g transform="rotate(0)"><ellipse class="bloom"  cx="0" cy="-18" rx="12" ry="22"/></g>
+          <g transform="rotate(60)"><ellipse class="bloom" cx="0" cy="-18" rx="12" ry="22"/></g>
+          <g transform="rotate(120)"><ellipse class="bloom" cx="0" cy="-18" rx="12" ry="22"/></g>
+          <g transform="rotate(180)"><ellipse class="bloom" cx="0" cy="-18" rx="12" ry="22"/></g>
+          <g transform="rotate(240)"><ellipse class="bloom" cx="0" cy="-18" rx="12" ry="22"/></g>
+          <g transform="rotate(300)"><ellipse class="bloom" cx="0" cy="-18" rx="12" ry="22"/></g>
+          <circle class="center" r="8"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> WonderStemFul</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu
+    const btn=document.querySelector('.menu-toggle'), nav=document.getElementById('nav');
+    btn?.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); });
+
+    // Year
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // Flower progress based on its position near the Ways section
+    (function(){
+      const svg=document.querySelector('.flower');
+      const stem=document.querySelector('.flower .stem');
+      if(!svg||!stem) return;
+      try{ svg.style.setProperty('--len', stem.getTotalLength()); }catch(e){}
+      const onScroll=()=>{
+        const r=svg.getBoundingClientRect();
+        const vh=innerHeight||document.documentElement.clientHeight;
+        let p=(vh - r.top) / (vh + r.height);
+        p=Math.min(1, Math.max(0, p*1.5));
+        svg.style.setProperty('--p', p);
+      };
+      ['load','scroll','resize'].forEach(ev=>addEventListener(ev,onScroll,{passive:true}));
+      onScroll();
+    })();
+
+    // Butterfly SVG (purple with spots, like your reference)
+    function butterflySVG(){
+  // Two wings per side (fore + hind) with a notch so it never reads as a heart
+  return `
+  <svg viewBox="0 0 56 56" aria-hidden="true">
+    <defs>
+      <linearGradient id="ppA" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#B28AFB"/><stop offset="100%" stop-color="#7C57E9"/>
+      </linearGradient>
+      <linearGradient id="ppB" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#7C57E9"/><stop offset="100%" stop-color="#B28AFB"/>
+      </linearGradient>
+    </defs>
+
+    <!-- LEFT SIDE -->
+    <!-- Forewing (upper) with a clear inner notch near the body -->
+    <path class="wing fore left"
+      d="M28 28
+         C 19 18, 18 10, 22 7
+         C 27 5, 30 8, 29 16
+         C 28 22, 28 24, 28 28
+         Z"
+      fill="url(#ppA)" opacity="0.96"/>
+    <!-- Hindwing (lower), smaller and offset -->
+    <path class="wing hind left"
+      d="M28 28
+         C 18 30, 16 40, 20 45
+         C 24 49, 28 45, 28 38
+         C 28 33, 28 31, 28 28
+         Z"
+      fill="url(#ppA)" opacity="0.96"/>
+    <!-- Spots -->
+    <circle cx="23" cy="14" r="2.1" fill="#EAD9FF" opacity="0.9"/>
+    <circle cx="22" cy="36" r="1.8" fill="#EAD9FF" opacity="0.9"/>
+
+    <!-- RIGHT SIDE -->
+    <g class="right">
+      <path class="wing fore right"
+        d="M28 28
+           C 37 18, 38 10, 34 7
+           C 29 5, 26 8, 27 16
+           C 28 22, 28 24, 28 28
+           Z"
+        fill="url(#ppB)" opacity="0.96"/>
+      <path class="wing hind right"
+        d="M28 28
+           C 38 30, 40 40, 36 45
+           C 32 49, 28 45, 28 38
+           C 28 33, 28 31, 28 28
+           Z"
+        fill="url(#ppB)" opacity="0.96"/>
+      <circle cx="33" cy="14" r="2.1" fill="#EAD9FF" opacity="0.9"/>
+      <circle cx="34" cy="36" r="1.8" fill="#EAD9FF" opacity="0.9"/>
+    </g>
+
+    <!-- Body + antennae -->
+    <rect x="27" y="12" width="2" height="18" rx="1" fill="#432b86"/>
+    <path d="M28 12 C24 8, 22 8, 20 6" stroke="#432b86" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <path d="M28 12 C32 8, 34 8, 36 6" stroke="#432b86" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  </svg>`;
+}
+
+
+    // Spawn a butterfly that flies across the whole page
+    function spawnButterfly(){
+      const el=document.createElement('div');
+      el.className='bfly';
+      el.innerHTML=butterflySVG();
+      document.body.appendChild(el);
+
+      const startSide = Math.random()<0.5 ? -10 : 110; // vw
+      const endSide   = startSide===-10 ? 110 : -10;
+      const yStart = Math.random()*20 + 70; // 70–90vh
+      const yEnd   = Math.random()*20 + 5;  // 5–25vh
+      const dur = 9 + Math.random()*5;
+      const c1x = Math.random()*60 + 20, c2x = Math.random()*60 + 20;
+      const c1y = Math.random()*60 + 20, c2y = Math.random()*60 + 20;
+
+      const t0=performance.now();
+      (function fly(now){
+        const angle = Math.sin(t * 12) * 6; // -6..6 degrees gentle roll
+el.style.left = bx + 'vw';
+el.style.top  = by + 'vh';
+el.style.transform = `translate(-50%,-50%) rotate(${angle}deg)`;
+el.style.opacity = t > .9 ? 1 - (t-.9)*10 : 1;
+      })(t0);
+    }
+
+    // Gentle global swarm
+    window.addEventListener('load', ()=>{
+      for(let i=0;i<5;i++) setTimeout(spawnButterfly, i*220); // burst
+      const id=setInterval(spawnButterfly, 1600);            // trickle
+      setTimeout(()=>clearInterval(id), 25000);               // stop after 25s
+    });
+  </script>
+  <script> window.addEventListener('DOMContentLoaded', () => { const btn = document.querySelector('.menu-toggle'); const nav = document.getElementById('nav'); if (!btn || !nav) return; btn.addEventListener('click', () => { const open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); }); }); </script>
+</body>
+</html>
